@@ -1,0 +1,192 @@
+
+
+:root {
+    --main-font: 'Arial', sans-serif;
+    --heading-font: 'Helvetica', sans-serif;
+}
+
+/* posicionamiento */
+.fi{text-align: left;}
+.fc{text-align: center;}
+.fd{text-align: right;}
+.fj{text-align: justify;}
+
+/* espaciado entre letras */
+.le1{letter-spacing: 1px;}
+.le2{letter-spacing: 2px;}
+.le3{letter-spacing: 3px;}
+
+.fil{text-wrap: nowrap;}
+
+/* tamaños de letra */
+.ff12 { font-size: 12px; }
+.ff14 { font-size: 14px; }
+.ff16 { font-size: 16px; }
+.ff18 { font-size: 18px; }
+.ff20 { font-size: 20px; }
+.ff22 { font-size: 22px; }
+.ff24 { font-size: 24px; }
+.ff26 { font-size: 26px; }
+.ff28 { font-size: 28px; }
+.ff30 { font-size: 30px; }
+.ff32 { font-size: 32px; }
+.ff34 { font-size: 34px; }
+.ff36 { font-size: 36px; }
+.ff38 { font-size: 38px; }
+.ff40 { font-size: 40px; }
+.ff42 { font-size: 42px; }
+.ff44 { font-size: 44px; }
+.ff46 { font-size: 46px; }
+.ff48 { font-size: 48px; }
+.ff50 { font-size: 50px; }
+.ff52 { font-size: 52px; }
+.ff54 { font-size: 54px; }
+.ff56 { font-size: 56px; }
+.ff58 { font-size: 58px; }
+.ff60 { font-size: 60px; }
+
+/* Colores de texto */
+.c-n { color: #000000; }                   /* Negro */
+.c-n-i { color: #111111; }           /* Negro intenso */
+.c-g-o { color: #222222; }             /* Gris oscuro */
+.c-g { color: #333333; }                    /* Gris */
+.c-g-m { color: #444444; }              /* Gris medio */
+.c-g-c { color: #555555; }              /* Gris claro */
+.c-g-m-c { color: #666666; }          /* Gris más claro */
+.c-g-x-c{ color: #777777; }          /* Gris muy claro */
+.c-g-s-c { color: #888888; }        /* Gris super claro */
+.c-g-b { color: #999999; }             /* Casi blanco */
+.c-g-c { color: #AAAAAA; }             /* Gris claro */
+.c-g-x-c { color: #BBBBBB; }         /* Gris más claro */
+.c-g-m-c { color: #CCCCCC; }         /* Gris muy claro */
+.c-g-e-c { color: #DDDDDD; } /* Gris extremadamente claro */
+.c-c-b{ color: #EEEEEE; }            /* Casi blanco */
+.c-b { color: #FFFFFF; }                  /* Blanco */
+.c-r { color: #FF0000; }                    /* Rojo */
+.c-v { color: #00FF00; }                   /* Verde */
+.c-a { color: #0000FF; }                    /* Azul */
+
+/* animaciones de fonts */
+
+.ff-c-t{transition: color 0.5s ease;}
+
+
+/* Tipografias */
+
+
+/* MediaQueries Automaticas */
+
+/* Tamaño de fuentes */
+
+@media screen and (min-width: 768px) {
+    .ff12 { font-size: 14px; }
+    .ff14 { font-size: 16px; }
+    .ff16 { font-size: 18px; }
+    .ff18 { font-size: 20px; }
+    .ff20 { font-size: 22px; }
+    .ff22 { font-size: 24px; }
+    .ff24 { font-size: 26px; }
+    .ff26 { font-size: 28px; }
+    .ff28 { font-size: 30px; }
+    .ff30 { font-size: 32px; }
+    .ff32 { font-size: 34px; }
+    .ff34 { font-size: 36px; }
+    .ff36 { font-size: 38px; }
+    .ff38 { font-size: 40px; }
+    .ff40 { font-size: 42px; }
+    .ff42 { font-size: 44px; }
+    .ff44 { font-size: 46px; }
+    .ff46 { font-size: 48px; }
+    .ff48 { font-size: 50px; }
+    .ff50 { font-size: 52px; }
+    .ff52 { font-size: 54px; }
+    .ff54 { font-size: 56px; }
+    .ff56 { font-size: 58px; }
+    .ff58 { font-size: 60px; }
+    .ff60 { font-size: 62px; }
+    /* Agrega más ajustes de tamaño de letra según sea necesario */
+}
+@media screen and (min-width: 1024px) {
+    .ff12 { font-size: 16px; }
+    .ff14 { font-size: 18px; }
+    .ff16 { font-size: 20px; }
+    .ff18 { font-size: 22px; }
+    .ff20 { font-size: 24px; }
+    .ff22 { font-size: 26px; }
+    .ff24 { font-size: 28px; }
+    .ff26 { font-size: 30px; }
+    .ff28 { font-size: 32px; }
+    .ff30 { font-size: 34px; }
+    .ff32 { font-size: 36px; }
+    .ff34 { font-size: 38px; }
+    .ff36 { font-size: 40px; }
+    .ff38 { font-size: 42px; }
+    .ff40 { font-size: 44px; }
+    .ff42 { font-size: 46px; }
+    .ff44 { font-size: 48px; }
+    .ff46 { font-size: 50px; }
+    .ff48 { font-size: 52px; }
+    .ff50 { font-size: 54px; }
+    .ff52 { font-size: 56px; }
+    .ff54 { font-size: 58px; }
+    .ff56 { font-size: 60px; }
+    .ff58 { font-size: 62px; }
+    .ff60 { font-size: 64px; }
+    /* Agrega más ajustes de tamaño de letra según sea necesario */
+}
+@media screen and (min-width: 1200px) {
+    .ff12 { font-size: 18px; }
+    .ff14 { font-size: 20px; }
+    .ff16 { font-size: 22px; }
+    .ff18 { font-size: 24px; }
+    .ff20 { font-size: 26px; }
+    .ff22 { font-size: 28px; }
+    .ff24 { font-size: 30px; }
+    .ff26 { font-size: 32px; }
+    .ff28 { font-size: 34px; }
+    .ff30 { font-size: 36px; }
+    .ff32 { font-size: 38px; }
+    .ff34 { font-size: 40px; }
+    .ff36 { font-size: 42px; }
+    .ff38 { font-size: 44px; }
+    .ff40 { font-size: 46px; }
+    .ff42 { font-size: 48px; }
+    .ff44 { font-size: 50px; }
+    .ff46 { font-size: 52px; }
+    .ff48 { font-size: 54px; }
+    .ff50 { font-size: 56px; }
+    .ff52 { font-size: 58px; }
+    .ff54 { font-size: 60px; }
+    .ff56 { font-size: 62px; }
+    .ff58 { font-size: 64px; }
+    .ff60 { font-size: 66px; }
+    /* Agrega más ajustes de tamaño de letra según sea necesario */
+}
+@media screen and (min-width: 1400px) {
+    .ff12 { font-size: 20px; }
+    .ff14 { font-size: 22px; }
+    .ff16 { font-size: 24px; }
+    .ff18 { font-size: 26px; }
+    .ff20 { font-size: 28px; }
+    .ff22 { font-size: 30px; }
+    .ff24 { font-size: 32px; }
+    .ff26 { font-size: 34px; }
+    .ff28 { font-size: 36px; }
+    .ff30 { font-size: 38px; }
+    .ff32 { font-size: 40px; }
+    .ff34 { font-size: 42px; }
+    .ff36 { font-size: 44px; }
+    .ff38 { font-size: 46px; }
+    .ff40 { font-size: 48px; }
+    .ff42 { font-size: 50px; }
+    .ff44 { font-size: 52px; }
+    .ff46 { font-size: 54px; }
+    .ff48 { font-size: 56px; }
+    .ff50 { font-size: 58px; }
+    .ff52 { font-size: 60px; }
+    .ff54 { font-size: 62px; }
+    .ff56 { font-size: 64px; }
+    .ff58 { font-size: 66px; }
+    .ff60 { font-size: 68px; }
+    /* Agrega más ajustes de tamaño de letra según sea necesario */
+}

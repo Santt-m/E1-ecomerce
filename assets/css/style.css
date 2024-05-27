@@ -1,0 +1,88 @@
+:root{
+
+  /* Navbar */
+  /* colores */
+  --navbarbackgroundcolor: rgb(255, 255, 255);
+  --navbarbackgroundcolorhover:rgba(128, 128, 128, 0.61);
+  /* fuente */
+  --navbarfont: 'Arial', sans-serif;
+  --navbartextColor: rgb(0, 0, 0);
+  --navbartextColorhover:green;
+}
+
+/* test */
+
+/* div{
+  border: 1px solid rgb(9, 196, 49);
+}
+main{
+  border: 1px solid blue;
+}
+section{
+  border: 1px solid green;
+}
+img{
+  border: 1px solid white;
+} */
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  background-color: var(--navbarbackgroundcolor);
+  font-family: var(--navbarfont);
+  color: var(--navbartextColor);
+}
+#toggle-menu {
+  display: none;
+}
+.navbar ul {
+  list-style-type: none;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--navbartextColor);
+}
+.navbar a:hover {
+  color: var(--navbartextColorhover);
+}
+.navbar i {
+  font-size: 36px;
+}
+.navbarlinks {
+  display: none;
+  text-decoration: none;
+  color: var(--navbartextColor);
+
+  width: 100%;
+}
+.navbarlinks:hover {
+  color: var(--navbartextColorhover);
+}
+#toggle-menu:checked ~ .navbarlinks {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 50vh;
+
+  background-color: var(--navbarbackgroundcolorhover);
+}
+@media screen and (min-width: 1024px) {
+  .navbarlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  nav label {
+    display: none;
+  }
+}
+/* index.html */
+

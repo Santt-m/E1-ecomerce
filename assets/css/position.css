@@ -1,0 +1,100 @@
+/* Veremos que sale */
+
+/* width ANCHO */
+.w100{width:100%;}
+.w90{width:90%;}
+.w80{width:80%;}
+.w70{width:70%;}
+.w60{width:60%;}
+.w50{width:50%;}
+.w40{width:40%;}
+.w30{width:30%;}
+.w20{width:20%;}
+.w10{width:10%;}
+.w5{width: 5%;}
+
+/* height ALTO % */
+.h100{height:100%;}
+.h90{height:90%;}
+.h80{height:80%;}
+.h70{height:70%;}
+.h60{height:60%;}
+.h50{height:50%;}
+.h40{height:40%;}
+.h30{height:30%;}
+.h20{height:20%;}
+.h10{height:10%;}
+
+/* Alturas en viewport height (vh) */
+.h100vh{height:100vh;}
+.h90vh{height:90vh;}
+.h80vh{height:80vh;}
+.h70vh{height:70vh;}
+.h60vh{height:60vh;}
+.h50vh{height:50vh;}
+.h40vh{height:40vh;}
+.h30vh{height:30vh;}
+.h20vh{height:20vh;}
+.h10vh{height:10vh;}
+.h5vh{height:5vh;}
+
+.mt5{margin-top: 5px;}
+.mt10{margin-top: 10px;}
+
+
+/* Display Flex */
+.fx { display: flex; }
+
+/* tipos de caja */
+.fx-cr { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 2%;}
+.fx-bx{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;}
+/* Flex Direction */
+.-r { flex-direction: row; }
+.-r-r { flex-direction: row-reverse; }
+.-c { flex-direction: column; }
+.-c-r { flex-direction: column-reverse; }
+/* Flex Wrap */
+.-w { flex-wrap: wrap; }
+.-w-n { flex-wrap: nowrap; }
+.-w-r { flex-wrap: wrap-reverse; }
+/* Justify Content */
+.-j-s { justify-content: flex-start; }
+.-j-e { justify-content: flex-end; }
+.-j-c { justify-content: center; }
+.-j-s-b { justify-content: space-between; }
+.-j-s-a { justify-content: space-around; }
+/* Align Items */
+.-a-s { align-items: flex-start; }
+.-a-e { align-items: flex-end; }
+.-a-c { align-items: center; }
+.-a-b { align-items: baseline; }
+.-a-s { align-items: stretch; }
+/* Align Content */
+.-a-c-s { align-content: flex-start; }
+.-a-c-e { align-content: flex-end; }
+.-a-c-c { align-content: center; }
+.-a-c-s-b { align-content: space-between; }
+.-a-c-s-a { align-content: space-around; }
+.-a-c-s { align-content: stretch; }
+
+.gap1{ gap:1%;}
+.gap5{ gap:5%;}
+.gap10{ gap:10%;}
+
+/* padding */
+
+.p5{padding: 5px;}
+.p10{padding: 10px;}
+/*  */
