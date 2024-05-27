@@ -96,117 +96,257 @@
     }
 
 
-/* efecto bounce (deslizarse) */
+/* Efecto bounce (deslizarse) */
 
-/* Efecto deslizarse hacia la izquierda */
+/* Clases de animación */
+.ffbounceLeft, .ffbounceLeftINF, .ffbounceRight, .ffbounceRightINF,
+.ffbounceTop, .ffbounceTopINF, .ffbounceBottom, .ffbounceBottomINF {
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-fill-mode: none;
+}
+
 .ffbounceLeft {
-    animation: ffbounceLeft 2s ease 0s 1 normal none;
-}
-/* Efecto infinito deslizarse hacia la izquierda */
-.ffbounceLeftINF{
-animation: ffbounceLeft 2s ease 0s infinite normal none;
+    animation-name: ffbounceLeft;
+    animation-iteration-count: 1;
 }
 
+.ffbounceLeftINF {
+    animation-name: ffbounceLeft;
+    animation-iteration-count: infinite;
+}
+
+.ffbounceRight {
+    animation-name: ffbounceRight;
+    animation-iteration-count: 1;
+}
+
+.ffbounceRightINF {
+    animation-name: ffbounceRight;
+    animation-iteration-count: infinite;
+}
+
+.ffbounceTop {
+    animation-name: ffbounceTop;
+    animation-iteration-count: 1;
+}
+
+.ffbounceTopINF {
+    animation-name: ffbounceTop;
+    animation-iteration-count: infinite;
+}
+
+.ffbounceBottom {
+    animation-name: ffbounceBottom;
+    animation-iteration-count: 1;
+}
+
+.ffbounceBottomINF {
+    animation-name: ffbounceBottom;
+    animation-iteration-count: infinite;
+}
+
+/* Variables específicas para cada dirección horizontal */
+.ffbounceLeft, .ffbounceLeftINF {
+    --start-x: -10%;
+    --step-1-x: -5%;
+    --step-2-x: -2.5%;
+    --step-3-x: -1.25%;
+    --step-4-x: -0.75%;
+}
+
+.ffbounceRight, .ffbounceRightINF {
+    --start-x: 10%;
+    --step-1-x: 5%;
+    --step-2-x: 2.5%;
+    --step-3-x: 1.25%;
+    --step-4-x: 0.75%;
+}
+
+/* Variables específicas para cada dirección vertical */
+.ffbounceTop, .ffbounceTopINF {
+    --start-y: -10%;
+    --step-1-y: -5%;
+    --step-2-y: -2.5%;
+    --step-3-y: -1.25%;
+    --step-4-y: -0.75%;
+}
+
+.ffbounceBottom, .ffbounceBottomINF {
+    --start-y: 10%;
+    --step-1-y: 5%;
+    --step-2-y: 2.5%;
+    --step-3-y: 1.25%;
+    --step-4-y: 0.75%;
+}
+
+/* Keyframes para la animación de desplazamiento a la izquierda */
 @keyframes ffbounceLeft {
     0% {
-      animation-timing-function: ease-in;
-      opacity: 1;
-      transform: translateX(-48px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateX(var(--start-x));
     }
-  
     24% {
-      opacity: 1;
+        opacity: 1;
     }
-  
     40% {
-      animation-timing-function: ease-in;
-      transform: translateX(-26px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-1-x));
     }
-  
     65% {
-      animation-timing-function: ease-in;
-      transform: translateX(-13px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-2-x));
     }
-  
     82% {
-      animation-timing-function: ease-in;
-      transform: translateX(-6.5px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-3-x));
     }
-  
     93% {
-      animation-timing-function: ease-in;
-      transform: translateX(-4px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-4-x));
     }
-  
     25%,
     55%,
     75%,
     87%,
     98% {
-      animation-timing-function: ease-out;
-      transform: translateX(0px);
+        animation-timing-function: ease-out;
+        transform: translateX(0);
     }
-  
     100% {
-      animation-timing-function: ease-out;
-      opacity: 1;
-      transform: translateX(0px);
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateX(0);
     }
-  }
-/* Efecto deslizarse hacia la derecha */
-.ffbounceRight {
-    animation: ffbounceRight 2s ease 0s 1 normal none;
 }
-/* Efecto infinito deslizarse hacia la derecha */
-.ffbounceRightINF{
-animation: ffbounceRight 2s ease 0s infinite normal none;
-}
+
+/* Keyframes para la animación de desplazamiento a la derecha */
 @keyframes ffbounceRight {
     0% {
-      animation-timing-function: ease-in;
-      opacity: 1;
-      transform: translateX(48px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateX(var(--start-x));
     }
-  
     24% {
-      opacity: 1;
+        opacity: 1;
     }
-  
     40% {
-      animation-timing-function: ease-in;
-      transform: translateX(26px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-1-x));
     }
-  
     65% {
-      animation-timing-function: ease-in;
-      transform: translateX(13px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-2-x));
     }
-  
     82% {
-      animation-timing-function: ease-in;
-      transform: translateX(6.5px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-3-x));
     }
-  
     93% {
-      animation-timing-function: ease-in;
-      transform: translateX(4px);
+        animation-timing-function: ease-in;
+        transform: translateX(var(--step-4-x));
     }
-  
     25%,
     55%,
     75%,
     87%,
     98% {
-      animation-timing-function: ease-out;
-      transform: translateX(0px);
+        animation-timing-function: ease-out;
+        transform: translateX(0);
     }
-  
     100% {
-      animation-timing-function: ease-out;
-      opacity: 1;
-      transform: translateX(0px);
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateX(0);
     }
-  }
+}
+
+/* Keyframes para la animación de desplazamiento hacia arriba */
+@keyframes ffbounceTop {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateY(var(--start-y));
+    }
+    24% {
+        opacity: 1;
+    }
+    40% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-1-y));
+    }
+    65% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-2-y));
+    }
+    82% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-3-y));
+    }
+    93% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-4-y));
+    }
+    25%,
+    55%,
+    75%,
+    87%,
+    98% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+    100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes para la animación de desplazamiento hacia abajo */
+@keyframes ffbounceBottom {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateY(var(--start-y));
+    }
+    24% {
+        opacity: 1;
+    }
+    40% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-1-y));
+    }
+    65% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-2-y));
+    }
+    82% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-3-y));
+    }
+    93% {
+        animation-timing-function: ease-in;
+        transform: translateY(var(--step-4-y));
+    }
+    25%,
+    55%,
+    75%,
+    87%,
+    98% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+    100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
 
 /* Efectp Jello (tipo estirarse copado) */
 .ffjello{

@@ -3,7 +3,7 @@
   /* Navbar */
   /* colores */
   --navbarbackgroundcolor: rgb(255, 255, 255);
-  --navbarbackgroundcolorhover:rgba(128, 128, 128, 0.61);
+  --navbarbackgroundcolorhover:rgb(255, 255, 255);
   /* fuente */
   --navbarfont: 'Arial', sans-serif;
   --navbartextColor: rgb(0, 0, 0);
@@ -61,17 +61,25 @@ img{
 }
 #toggle-menu:checked ~ .navbarlinks {
   position: absolute;
-  top: 5vh;
-  left: 0;
+  top: 11vh;
+  left: 5%;
+  border: 1px solid gray;
+  border-radius: 25px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
+  width: 90%;
   height: 50vh;
 
   background-color: var(--navbarbackgroundcolorhover);
+}
+#toggle-menu:checked ~ .navbarlinks li{
+  width: 100%;
+  padding: 20px;
 }
 @media screen and (min-width: 1024px) {
   .navbarlinks {

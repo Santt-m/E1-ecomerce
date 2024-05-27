@@ -129,7 +129,7 @@ body{
 header{
     width: 100%;
     max-width: 1920px;
-    height: 100%;
+    min-height: 10vh;
     padding: 5px;
     display: flex;
     flex-direction: row;
@@ -148,17 +148,18 @@ header{
 main{
     width: 100%;
     max-width: 1920px;
+    min-height: 90vh;
+
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     display: flex;
 }
-
 footer{
     width: 100%;
     max-width: 1920px;
-    height: 10vh;
+    min-height: 20vh;
 
     border-top: 1px solid black;
 }
