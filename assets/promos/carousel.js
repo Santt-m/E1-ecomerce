@@ -1,4 +1,4 @@
-import { init as initCarouselControl } from './carouselControl.js';
+import { initCarouselControl } from './carouselControl.js';
 
 export function carousel() {
     const items = document.querySelectorAll('.carousel-item');

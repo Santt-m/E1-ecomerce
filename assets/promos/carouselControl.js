@@ -1,6 +1,6 @@
 // Generar los botones del carousel automaticamente
 
-function initCarouselControl() {
+export function initCarouselControl() {
     document.addEventListener("DOMContentLoaded", function() {
     const carouselContainer = document.querySelector('.carousel-container');
     const carouselItems = carouselContainer.querySelectorAll('.carousel-item');
@@ -16,12 +16,5 @@ function initCarouselControl() {
     dotContainer.appendChild(dot);
     });
     });
-}
-
-export const init = () => {
-    if(document.querySelector('.carousel-container')) {
-        initCarouselControl();
-        console.log('init carousel control');
-}
 }
 
