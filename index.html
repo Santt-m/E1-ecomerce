@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="./assets/css/position.css">
     <link rel="stylesheet" href="./assets/css/mq.css">
     <link rel="stylesheet" href="./assets/css/fonts.css">
-    <!-- <link rel="stylesheet" href="./assets/css/anim.css"> -->
+    <link rel="stylesheet" href="./assets/css/anim.css">
     <link rel="stylesheet" href="./assets/css/js.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- css externos -->
     <!-- awesomefonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- animaciones de https://animate.style/ -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- links favicon -->
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
 
@@ -23,11 +21,11 @@
 </head>
 <body>
     <header>
-        <a href="./index.html"><img src="./nav/logo.svg" alt="logo"></a>
+        <a href="./index.html"><img src="./assets/nav/logo.svg" alt="logo"></a>
         <nav class="navbar a1024w40">
             <label for="toggle-menu" class=""><i class="fas fa-bars"></i></label>
             <input type="checkbox" id="toggle-menu">
-            <ul class="navbarlinks fc animate__animated animate__fadeInDown">
+            <ul class="navbarlinks a1024h100 fc slideDown">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./products.html">Productos</a></li>
                 <li><a href="./contact.html">Contacto</a></li>
@@ -35,8 +33,28 @@
             </ul>
         </nav>
     </header>
-    <main>
-
+    <main class="p5">
+        <!-- hero -->
+        <div class="hero w100 h50vh fx -c -a-c -j-c gap5 a1024-r">
+            <img src="./assets/hero/zapatos.png" alt="imagen hero zapatos">
+            <div class="w100 h30 a1024w70 a1024h70 fx -c -a-c -j-s-b p5">
+                <h1>Zapatos exclusivos</h1>
+                <p class="sg20">Descubre la elegancia y comodidad que mereces en cada paso</p>
+                <a class="btnhero p10" href="./products.html">Ver Productos</a>
+            </div>
+        </div>
+        <!-- carrousel cards de promos -->
+        <div class="carousel-container">
+            <ul class="carousel -a-c -j-c">
+                <!-- carousel-items se renderizan por renderCarouselItems.js -->
+            </ul>
+            <div class="dot-container">
+                <!-- control del carrousel  -->
+            </div>
+        </div>
+        <div class="products a1024w80">
+            <!-- render de products -->
+        </div>
     </main>
     <footer class="fx -r -j-c -a-c">
         <div></div>
@@ -44,4 +62,5 @@
         <div></div>
     </footer>
 </body>
+<script type="module" src="main.js"></script>
 </html>

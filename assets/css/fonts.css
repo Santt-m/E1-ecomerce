@@ -11,6 +11,9 @@
 .fd{text-align: right;}
 .fj{text-align: justify;}
 
+/* sangria */
+.sg20{text-indent: 20px;}
+
 /* espaciado entre letras */
 .le1{letter-spacing: 1px;}
 .le2{letter-spacing: 2px;}

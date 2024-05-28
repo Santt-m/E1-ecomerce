@@ -1,0 +1,14 @@
+.hero{
+    background-image: url(./background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.hero img{
+    width: 50%;
+    height: auto;
+    min-width: 300px;
+    max-width: 600px;
+
+    max-height: 220px;
+}

@@ -119,14 +119,18 @@ body{
     align-items: center;
     color: var(--bodycolor);
     background-color: var(--bodybackgroundcolor);
-/* 
-  background-image: url();
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 100%;
-*/
+
+    background-image: url(../img/bodybackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+
 }
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     width: 100%;
     max-width: 1920px;
     min-height: 10vh;
@@ -136,7 +140,6 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 /* 
   background-image: url(../img/hero/background.jpg);
@@ -146,15 +149,14 @@ header{
 */
 }
 main{
+    margin-top: 10vh;
     width: 100%;
     max-width: 1920px;
     min-height: 90vh;
 
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 footer{
     width: 100%;

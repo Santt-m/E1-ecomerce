@@ -1,0 +1,16 @@
+/* Efecto de fadeout */
+.fadeOut {
+    animation-name: fadeout;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  

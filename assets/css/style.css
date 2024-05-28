@@ -1,14 +1,15 @@
-:root{
+/*css del nav */
+@import url(../nav/nav.css);
 
-  /* Navbar */
-  /* colores */
-  --navbarbackgroundcolor: rgb(255, 255, 255);
-  --navbarbackgroundcolorhover:rgb(255, 255, 255);
-  /* fuente */
-  --navbarfont: 'Arial', sans-serif;
-  --navbartextColor: rgb(0, 0, 0);
-  --navbartextColorhover:green;
-}
+/*css del hero */
+@import url(../hero/hero.css);
+
+/* css promos */
+@import url(../promos/carousel.css);
+
+/* css products */
+@import url(../products/products.css);
+
 
 /* test */
 
@@ -22,75 +23,5 @@ section{
   border: 1px solid green;
 }
 img{
-  border: 1px solid white;
+  border: 1px solid black;
 } */
-
-
-/* Navbar */
-.navbar {
-  display: flex;
-  background-color: var(--navbarbackgroundcolor);
-  font-family: var(--navbarfont);
-  color: var(--navbartextColor);
-}
-#toggle-menu {
-  display: none;
-}
-.navbar ul {
-  list-style-type: none;
-}
-.navbar a {
-  text-decoration: none;
-  color: var(--navbartextColor);
-}
-.navbar a:hover {
-  color: var(--navbartextColorhover);
-}
-.navbar i {
-  font-size: 36px;
-}
-.navbarlinks {
-  display: none;
-  text-decoration: none;
-  color: var(--navbartextColor);
-
-  width: 100%;
-}
-.navbarlinks:hover {
-  color: var(--navbartextColorhover);
-}
-#toggle-menu:checked ~ .navbarlinks {
-  position: absolute;
-  top: 11vh;
-  left: 5%;
-  border: 1px solid gray;
-  border-radius: 25px;
-
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 90%;
-  height: 50vh;
-
-  background-color: var(--navbarbackgroundcolorhover);
-}
-#toggle-menu:checked ~ .navbarlinks li{
-  width: 100%;
-  padding: 20px;
-}
-@media screen and (min-width: 1024px) {
-  .navbarlinks {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-  }
-  nav label {
-    display: none;
-  }
-}
-/* index.html */
-

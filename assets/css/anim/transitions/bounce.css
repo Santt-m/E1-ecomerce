@@ -1,0 +1,30 @@
+/* Efecto de Rebote (Bounce) */
+/* Clase de animación para rebote */
+.bounce { animation: bounceOnce 1s ease-in-out forwards; }
+/* Keyframes para el rebote */
+@keyframes bounceOnce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10%); } 60% { transform: translateY(-5%); } }
+
+/* Clase de animación para rebote infinito */
+.bounceInf { animation: bounce 1s ease-in-out infinite; }
+/* Keyframes para el rebote infinito */
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10%); } 60% { transform: translateY(-5%); } }
+
+/* Clase de animación para rebote único hacia arriba */
+.bounceOnceUp { animation: bounceOnceUp 1s ease-in-out forwards; }
+/* Keyframes para el rebote único hacia arriba */
+@keyframes bounceOnceUp { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10%); } 60% { transform: translateY(-5%); } }
+
+/* Clase de animación para rebote único hacia abajo */
+.bounceOnceDown { animation: bounceOnceDown 1s ease-in-out forwards; }
+/* Keyframes para el rebote único hacia abajo */
+@keyframes bounceOnceDown { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(10%); } 60% { transform: translateY(5%); } }
+
+/* Clase de animación para rebote único hacia la derecha */
+.bounceOnceRight { animation: bounceOnceRight 1s ease-in-out forwards; }
+/* Keyframes para el rebote único hacia la derecha */
+@keyframes bounceOnceRight { 0%, 20%, 50%, 80%, 100% { transform: translateX(0); } 40% { transform: translateX(10%); } 60% { transform: translateX(5%); } }
+
+/* Clase de animación para rebote único hacia la izquierda */
+.bounceOnceLeft { animation: bounceOnceLeft 1s ease-in-out forwards; }
+/* Keyframes para el rebote único hacia la izquierda */
+@keyframes bounceOnceLeft { 0%, 20%, 50%, 80%, 100% { transform: translateX(0); } 40% { transform: translateX(-10%); } 60% { transform: translateX(-5%); } }
