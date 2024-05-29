@@ -37,6 +37,11 @@
 }
 .carousel-item div{
     width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center
 }
 
 /* css del dot */

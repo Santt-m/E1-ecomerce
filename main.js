@@ -8,8 +8,9 @@ import { initRenderProducts } from './assets/products/renderProducts.js';
 
 const init = () =>{
     // iniciamos los componentes
-    initCarousel();
     initRenderCarouselItems();
+    initCarousel();
+    
     initRenderProducts();
 }
 
