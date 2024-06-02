@@ -1,5 +1,3 @@
-import { initCarouselControl } from './carouselControl.js';
-
 export function carousel() {
     const items = document.querySelectorAll('.carousel-item');
     let currentItem = 0;

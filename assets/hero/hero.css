@@ -5,8 +5,8 @@
     background-position: 50% 50%;
 }
 .hero img{
-    width: 50%;
-    height: auto;
+    width: auto;
+    height: 50%;
     min-width: 300px;
     max-width: 600px;
 

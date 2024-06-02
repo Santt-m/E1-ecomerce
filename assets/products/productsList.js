@@ -23,6 +23,7 @@ export const products = [
     {
         id: 4,
         name: "categoria 3",
+        tag: "categoria 3",
         description: "Zapatos deportivos",
         price: 1000,
     },

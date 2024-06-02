@@ -45,7 +45,7 @@
 }
 
 /* css del dot */
-.dot-container {
+.carousel-control {
     display: flex;
     justify-content: center;
     margin-top: 10px;
