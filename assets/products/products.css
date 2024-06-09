@@ -70,3 +70,21 @@
     font-size: 10px;
     font-weight: 800;
 }
+
+/* filters */
+
+.filter-container{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filter-btn{
+    padding: 10px;
+    border-radius: 25px;
+}

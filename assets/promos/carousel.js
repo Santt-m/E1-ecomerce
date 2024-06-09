@@ -40,22 +40,20 @@ export function carousel() {
         }, fadeDuration);
     }
 
-    function controlButton(direction, index) {
+    function controlButton(direction) {
+        const controlContainer = document.querySelector('.carousel-control');
         const controlButton = document.createElement('button');
         controlButton.classList.add(`carousel-control-${direction}`);
-        controlButton.setAttribute('data-index', index);
         controlButton.addEventListener('click', direction === 'next' ? nextItem : prevItem);
-        items[index].appendChild(controlButton);
+        controlContainer.appendChild(controlButton);
     }
 
     // Inicialización
     showItem(currentItem);
 
-    // Agregar botones de control para cada item
-    items.forEach((item, index) => {
-        controlButton('next', index);
-        controlButton('prev', index);
-    });
+    // Agregar botones de control
+    controlButton('next');
+    controlButton('prev');
 
     // Cambia de tarjeta cada displayDuration + fadeDuration * 2
     setInterval(nextItem, displayDuration + fadeDuration * 2);
@@ -66,6 +64,3 @@ export const initCarousel = () => {
         carousel();
     }
 }
-
-
-

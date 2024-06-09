@@ -3,15 +3,28 @@
   /* colores */
   --navbarbackgroundcolor: rgb(255, 255, 255);
   --navbarbackgroundcolorhover:rgb(155, 153, 153);
+  /* botones del nav */
+  --navbarbackgroundcolorlinkcolor: rgb(255, 255, 255);
+  --navbarbackgroundcolorlinkcolorhover:rgba(0, 0, 0, 0.082);
   /* fuente */
   --navbarfont: 'Arial', sans-serif;
   --navbartextColor: rgb(0, 0, 0);
-  --navbartextColorhover:green;
+  --navbartextColorhover:rgb(128, 0, 0);
 }
 header{
   background-color: var(--navbarbackgroundcolor);
 }
+nav li{
+  padding: 15px;
+  border-radius: 25px;
+  list-style: none;
+  background-color: var(--navbarbackgroundcolorlinkcolor);
+}
+nav li:hover{
+  background-color: var(--navbarbackgroundcolorlinkcolorhover);
+}
 .navbar {
+  height: 100%;
     display: flex;
     background-color: var(--navbarbackgroundcolor);
     font-family: var(--navbarfont);
@@ -28,7 +41,6 @@ header{
     padding: 20px;
   }
   .navbar a {
-    text-decoration: none;
     color: var(--navbartextColor);
   }
   .navbar a:hover {

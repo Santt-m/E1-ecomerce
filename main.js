@@ -1,27 +1,16 @@
-// section promos
-// aca se importa el script que genera los componentes del carousel
+// main.js
 import { initRenderCarouselItems } from './assets/promos/renderCarouselItems.js';
-// aca se importa el carousel
 import { initCarousel } from './assets/promos/carousel.js';
-
-
-// section products
-// aca se importa el script que renderiza los productos
 import { initRenderProductsAndFilters } from './assets/products/renderProducts.js';
+import { cartInit } from './assets/cart/cart.js';
+import { initWpOrder } from './assets/cart/wpOrder.js';
 
-
-
-const init = () =>{
-    // iniciamos los componentes
-    // promos
+const init = () => {
     initRenderCarouselItems();
     initCarousel();
-    
-    // products
     initRenderProductsAndFilters();
+    cartInit();
+    initWpOrder();
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    init();
-});
+document.addEventListener("DOMContentLoaded", init);

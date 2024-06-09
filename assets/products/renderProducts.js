@@ -1,4 +1,5 @@
 import { products } from "./productsList.js";
+import { addToCart } from "../cart/cart.js";
 
 const renderProductsAndFilters = () => {
     renderProducts();
@@ -25,6 +26,7 @@ const renderProducts = () => {
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p>💲​${product.price}</p>
+                    <button class="cartBtnAgregar" data-id="${product.id}">Agregar al carrito</button>
                     <a class="productBtn" href="./details.html?id=${product.id}">ver !</a>
                 </div>
             `;
@@ -39,6 +41,14 @@ const renderProducts = () => {
             });
             productElement.addEventListener('mouseleave', () => {
                 productDetails.style.display = 'none';
+            });
+        });
+
+        // Añadir evento a los botones de "Agregar al carrito"
+        document.querySelectorAll('.cartBtnAgregar').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = parseInt(e.target.getAttribute('data-id'), 10);
+                addToCart(productId);
             });
         });
     }
@@ -86,6 +96,9 @@ const filterProducts = (tag) => {
 
 const renderFilteredProducts = (filteredProducts) => {
     const productContainer = document.querySelector(".products");
+    
+    let cartBtnAgregar = document.querySelectorAll(".cartBtnAgregar");
+
     productContainer.innerHTML = "";
 
     if (filteredProducts) {
@@ -104,6 +117,7 @@ const renderFilteredProducts = (filteredProducts) => {
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p>💲​${product.price}</p>
+                    <button class="cartBtnAgregar" data-id="${product.id}">Agregar al carrito</button>
                     <a class="productBtn" href="./details.html?id=${product.id}">ver !</a>
                 </div>
             `;
@@ -118,6 +132,14 @@ const renderFilteredProducts = (filteredProducts) => {
             });
             productElement.addEventListener('mouseleave', () => {
                 productDetails.style.display = 'none';
+            });
+        });
+
+        // Añadir evento a los botones de "Agregar al carrito"
+        document.querySelectorAll('.cartBtnAgregar').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productId = parseInt(e.target.getAttribute('data-id'), 10);
+                addToCart(productId);
             });
         });
     }

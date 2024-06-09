@@ -1,5 +1,6 @@
 /*css del nav */
 @import url(../nav/nav.css);
+@import url(../cart/cart.css);
 
 /*css del hero */
 @import url(../hero/hero.css);

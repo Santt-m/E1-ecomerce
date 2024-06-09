@@ -1,0 +1,89 @@
+:root{
+    /* background del cart */
+    --cartbackgroundcolor: rgba(0, 0, 0, 0.651);
+    /* background del btn lo toma del nav*/
+
+    /* contenedor del carrito */
+    --cartContainerbackgroundColor: rgb(255, 255, 255);
+
+    /* cart fonts */
+    --cartTitleFont: 'Arial', sans-serif;
+    --cartPriTextColor: black;
+    --cartSecTextColor: grey;
+
+    /* items */
+    --cartItemsBorderColor: grey;
+    --cartItemsBorderRadius: 25px;
+    --cartItemsBackgroundColor: rgb(255, 255, 255);
+}
+
+.cartbtn{
+    background-color: var(--cartbtnbackgroundcolor);
+    border-radius: 5px;
+    padding: 5px;
+}
+.cartbtn:hover{
+    background-color: var(--navbarbackgroundcolorlinkcolorhover);
+}
+.cart{
+    background-color: var(--cartbackgroundcolor);
+    padding: 10px;
+    position: absolute;
+    top: 10vh;
+    left: 0px;
+
+    width: 100%;
+    height: 100vh;
+    
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.cartContainer{
+    width: 90%;
+    max-width: 600px;
+    height: 90%;
+    margin-right: 1%;
+    background-color: var(--cartContainerbackgroundColor);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart h4{
+    color: var(--cartPriTextColor);
+    padding: 10px;
+    text-align: center;
+}
+
+.cartItemContainer{
+    width: 90%;
+    height: auto;
+    padding: 5px;
+
+    border: 1px solid var(--cartItemsBorderColor);
+    border-radius: var(--cartItemsBorderRadius);
+
+    background-color: var(--cartItemsBackgroundColor);
+
+
+
+}
+
+.cart-item{
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-item img{
+    width: 100px;
+    height: 100px;
+
+    border-radius: 15px;
+}

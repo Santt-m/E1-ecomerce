@@ -44,22 +44,25 @@
     align-items: center
 }
 
-/* css del dot */
-.carousel-control {
+/* Carousel-Control */
+
+.carousel-control{
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: gray;
-    margin: 0 5px;
-    cursor: pointer;
+.carousel-control-next {
+    padding: 10px;
+    border-radius: 360px;
 }
 
-.dot.active {
-    background-color: black;
-}
+.carousel-control-prev{
+    padding: 10px;
+    border-radius: 360px;
+    }
