@@ -68,9 +68,9 @@ const renderCart = () => {
             itemDiv.className = "cart-item";
             itemDiv.innerHTML = `
                 <img src="./assets/products/productsList/${product.id}/img0.jpg" alt="Product ${product.id}">
-                <span>${product.name}</span>
-                <span>${product.price}</span>
-                <button class="remove-item" data-id="${product.id}">Remove</button>
+                <p>${product.name}</p>
+                <p>$ ${product.price}</p>
+                <button class="remove-item" data-id="${product.id}">X</button>
             `;
             cartContainer.appendChild(itemDiv);
         } else {
