@@ -1,58 +1,92 @@
 import { products } from "../products/productsList.js";
+import { addToCart } from "../cart/cart.js";
+import { initDetailsImg } from "./detailsImg.js";
 
-// Función para obtener el ID del producto desde la URL
-const getProductIdFromURL = () => {
-    const params = new URLSearchParams(window.location.search);
-    const urlID = parseInt(params.get('id'), 10); // Convertir el ID a entero
-    console.log('URL ID:', urlID);
-    return urlID;
+// Función para obtener el ID del producto a partir de la URL
+const obtenerIdProductoDeURL = () => {
+    const url = new URL(window.location.href);
+    const idProducto = parseInt(url.searchParams.get('id'), 10);
+    return isNaN(idProducto) ? null : idProducto;
 }
 
-// Función para obtener los detalles del producto por ID
-const getProductDetails = (productId) => {
-    console.log('Buscando detalles para el producto con ID:', productId);
-    return products.find(product => product.id === productId);
+// Función para obtener los detalles de un producto a partir de su ID
+const obtenerDetallesDelProducto = (idProducto) => {
+    return products.find(producto => producto.id === idProducto);
 }
 
-// Función para renderizar los detalles del producto
-const renderProductDetails = () => {
-    console.log('Ejecutando renderProductDetails');
-    const productId = getProductIdFromURL();
-    if (!productId) {
-        console.error('No se proporcionó ID del producto en la URL');
+// Función para renderizar los detalles de un producto
+const renderizarDetallesDelProducto = () => {
+    const idProducto = obtenerIdProductoDeURL();
+    if (!idProducto) return;
+
+    const detallesProducto = obtenerDetallesDelProducto(idProducto);
+    if (!detallesProducto) {
+        console.error(`No se encontró ningún producto con el ID ${idProducto}`);
         return;
     }
 
-    const product = getProductDetails(productId);
-    if (!product) {
-        console.error('No se encontró producto con el ID proporcionado');
+    const contenedorDetallesProducto = document.querySelector('.product-details');
+    if (!contenedorDetallesProducto) {
+        console.error('No se encontró ningún contenedor de detalles del producto');
         return;
     }
 
-    const productDetailsContainer = document.querySelector('.product-details');
-    if (!productDetailsContainer) {
-        console.error('No se encontró el contenedor de detalles del producto');
-        return;
-    }
-
-    console.log('Producto encontrado:', product);
-
-    // Renderizar los detalles del producto en el contenedor
-    productDetailsContainer.innerHTML = `
-        <h1>${product.name}</h1>
-        <img src="../assets/products/productsList/${product.id}/img0.jpg" alt="${product.name}">
-        <p>${product.description}</p>
-        <p>Precio: ${product.price}</p>
+    contenedorDetallesProducto.innerHTML = `
+        <div class="details-img">
+            <div class="details-botones"></div>
+        </div>
+        <div class="details-info">
+            <h1>${detallesProducto.name}</h1>
+            <p>${detallesProducto.description}</p>
+            <p>Precio: $ ${detallesProducto.price}</p>
+            <div class="cartAdd">
+                <button class="subtract-item" data-id="${detallesProducto.id}">-</button>
+                <span class="quantity" data-id="${detallesProducto.id}">1</span>
+                <button class="add-item" data-id="${detallesProducto.id}">+</button>
+                <button class="addToCart" data-id="${detallesProducto.id}">Agregar al carrito</button>
+            </div>
+        </div>
     `;
+
+    const botonSubtractItem = document.querySelector('.subtract-item');
+    const botonAddItem = document.querySelector('.add-item');
+    const spanQuantity = document.querySelector('.quantity');
+    const botonAgregarAlCarrito = document.querySelector('.addToCart');
+
+    const updateQuantity = () => {
+        const cantidad = parseInt(spanQuantity.textContent, 10);
+        const idProducto = parseInt(spanQuantity.getAttribute('data-id'), 10);
+        const producto = products.find(producto => producto.id === idProducto);
+        addToCart(producto, cantidad);
+    }
+
+    if (botonSubtractItem && botonAddItem && spanQuantity && botonAgregarAlCarrito) {
+        botonSubtractItem.addEventListener('click', (e) => {
+            const cantidad = parseInt(spanQuantity.textContent, 10);
+            if (cantidad > 1) {
+                spanQuantity.textContent = cantidad - 1;
+                updateQuantity();
+            }
+        });
+
+        botonAddItem.addEventListener('click', (e) => {
+            const cantidad = parseInt(spanQuantity.textContent, 10);
+            spanQuantity.textContent = cantidad + 1;
+            updateQuantity();
+        });
+
+        botonAgregarAlCarrito.addEventListener('click', (e) => {
+            updateQuantity();
+        });
+    }
+
+    initDetailsImg();
 }
 
-// Función de inicialización para los detalles del producto
-export const initDetails = () => {
-    console.log('Inicializando detalles del producto');
-    console.log('Agregando event listener para DOMContentLoaded en initDetails');
-    // Esperar a que el DOM esté completamente cargado antes de renderizar los detalles del producto
-    document.addEventListener("DOMContentLoaded", () => {
-        console.log('details init - DOMContentLoaded disparado');
-        renderProductDetails();
-    });
-}
+
+// Ejecutar la función renderizarDetallesDelProducto cuando se cargue el DOM
+document.addEventListener("DOMContentLoaded", renderizarDetallesDelProducto);
+
+
+
+

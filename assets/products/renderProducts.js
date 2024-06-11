@@ -26,7 +26,11 @@ const renderProducts = () => {
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p>💲​${product.price}</p>
-                    <button class="cartBtnAgregar" data-id="${product.id}">Agregar al carrito</button>
+                    <div class="cartBtnContainer">
+                        <button class="cartBtnAgregar" data-id="${product.id}" data-quantity="1">1</button>
+                        <button class="cartBtnAdd" data-id="${product.id}">+</button>
+                        <button class="cartBtnSubtract" data-id="${product.id}">-</button>
+                    </div>
                     <a class="productBtn" href="./details.html?id=${product.id}">ver !</a>
                 </div>
             `;
@@ -42,18 +46,40 @@ const renderProducts = () => {
             productElement.addEventListener('mouseleave', () => {
                 productDetails.style.display = 'none';
             });
-        });
 
-        // Añadir evento a los botones de "Agregar al carrito"
-        document.querySelectorAll('.cartBtnAgregar').forEach(button => {
-            button.addEventListener('click', (e) => {
+            // Añadir evento a los botones de "Agregar al carrito"
+            const cartBtnContainer = productElement.querySelector('.cartBtnContainer');
+            const cartBtnAdd = productElement.querySelector('.cartBtnAdd');
+            const cartBtnSubtract = productElement.querySelector('.cartBtnSubtract');
+            const cartBtnAgregar = productElement.querySelector('.cartBtnAgregar');
+
+            cartBtnAgregar.addEventListener('click', (e) => {
                 const productId = parseInt(e.target.getAttribute('data-id'), 10);
-                addToCart(productId);
+                const productQuantity = parseInt(e.target.getAttribute('data-quantity'), 10);
+                addToCart(productId, productQuantity);
+            });
+
+            cartBtnAdd.addEventListener('click', (e) => {
+                const productId = parseInt(e.target.getAttribute('data-id'), 10);
+                const productQuantity = cartBtnContainer.querySelector(`.cartBtnAgregar[data-id="${productId}"]`);
+                productQuantity.textContent = parseInt(productQuantity.textContent, 10) + 1;
+            });
+
+            cartBtnSubtract.addEventListener('click', (e) => {
+                const productId = parseInt(e.target.getAttribute('data-id'), 10);
+                const productQuantity = cartBtnContainer.querySelector(`.cartBtnAgregar[data-id="${productId}"]`);
+                if (parseInt(productQuantity.textContent, 10) > 1) {
+                    productQuantity.textContent = parseInt(productQuantity.textContent, 10) - 1;
+                }
             });
         });
     }
 };
 
+
+
+
+// filtros
 const renderFilters = () => {
     const filterContainer = document.querySelector('.filter-container');
     if (!filterContainer) {
@@ -150,3 +176,5 @@ export const initRenderProductsAndFilters = () =>{
         renderProductsAndFilters();
     }
 };
+
+

@@ -5,6 +5,7 @@ export const products = [
         tag: "categoria 1",
         description: "Zapatos deportivos",
         price: 1000,
+        img:['img0.jpg','img1.jpg','img2.jpg']
     },
     {
         id: 2,
@@ -12,6 +13,7 @@ export const products = [
         tag: "categoria 1",
         description: "Zapatos 1",
         price: 1000,
+        img:['img0.jpg','img1.jpg','img2.jpg']
     },
     {
         id: 3,
@@ -19,6 +21,7 @@ export const products = [
         tag: "categoria 2",
         description: "Zapatos 2",
         price: 1000,
+        img:['img0.jpg','img1.jpg','img2.jpg']
     },
     {
         id: 4,
@@ -26,5 +29,6 @@ export const products = [
         tag: "categoria 3",
         description: "Zapatos deportivos",
         price: 1000,
+        img:['img0.jpg','img1.jpg','img2.jpg']
     },
 ]
