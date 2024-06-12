@@ -38,10 +38,10 @@ const renderizarDetallesDelProducto = () => {
         <div class="details-info">
             <h1>${detallesProducto.name}</h1>
             <p>${detallesProducto.description}</p>
-            <p>Precio: $ ${detallesProducto.price}</p>
+            <p>Precio: $${detallesProducto.price}</p>
             <div class="cartAdd">
                 <button class="subtract-item" data-id="${detallesProducto.id}">-</button>
-                <span class="quantity" data-id="${detallesProducto.id}">1</span>
+                <span class="quantity" data-id="${detallesProducto.id}">${obtenerCantidadProductoEnCarrito(detallesProducto.id)}</span>
                 <button class="add-item" data-id="${detallesProducto.id}">+</button>
                 <button class="addToCart" data-id="${detallesProducto.id}">Agregar al carrito</button>
             </div>
@@ -53,40 +53,39 @@ const renderizarDetallesDelProducto = () => {
     const spanQuantity = document.querySelector('.quantity');
     const botonAgregarAlCarrito = document.querySelector('.addToCart');
 
-    const updateQuantity = () => {
-        const cantidad = parseInt(spanQuantity.textContent, 10);
-        const idProducto = parseInt(spanQuantity.getAttribute('data-id'), 10);
-        const producto = products.find(producto => producto.id === idProducto);
-        addToCart(producto, cantidad);
-    }
+    const obtenerCantidadActual = () => parseInt(spanQuantity.textContent, 10);
+    const actualizarCantidadEnSpan = (nuevaCantidad) => spanQuantity.textContent = nuevaCantidad;
 
     if (botonSubtractItem && botonAddItem && spanQuantity && botonAgregarAlCarrito) {
-        botonSubtractItem.addEventListener('click', (e) => {
-            const cantidad = parseInt(spanQuantity.textContent, 10);
+        botonSubtractItem.addEventListener('click', () => {
+            let cantidad = obtenerCantidadActual();
             if (cantidad > 1) {
-                spanQuantity.textContent = cantidad - 1;
-                updateQuantity();
+                cantidad -= 1;
+                actualizarCantidadEnSpan(cantidad);
             }
         });
 
-        botonAddItem.addEventListener('click', (e) => {
-            const cantidad = parseInt(spanQuantity.textContent, 10);
-            spanQuantity.textContent = cantidad + 1;
-            updateQuantity();
+        botonAddItem.addEventListener('click', () => {
+            let cantidad = obtenerCantidadActual();
+            cantidad += 1;
+            actualizarCantidadEnSpan(cantidad);
         });
 
-        botonAgregarAlCarrito.addEventListener('click', (e) => {
-            updateQuantity();
+        botonAgregarAlCarrito.addEventListener('click', () => {
+            const cantidad = obtenerCantidadActual();
+            addToCart(detallesProducto.id, cantidad); // Utilizamos addToCart de cart.js
         });
     }
 
+    // Llamar a la función de inicialización de imágenes aquí
     initDetailsImg();
 }
 
+// Función para obtener la cantidad de un producto en el carrito desde el LocalStorage
+const obtenerCantidadProductoEnCarrito = (idProducto) => {
+    const carrito = JSON.parse(localStorage.getItem('cart')) || {};
+    return carrito[idProducto] || 1; // Devuelve 1 si no hay cantidad en el carrito
+}
 
 // Ejecutar la función renderizarDetallesDelProducto cuando se cargue el DOM
 document.addEventListener("DOMContentLoaded", renderizarDetallesDelProducto);
-
-
-
-
