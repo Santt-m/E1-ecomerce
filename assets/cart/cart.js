@@ -30,6 +30,7 @@ export const addToCart = (productId) => {
     cart[productId] = (cart[productId] || 0) + 1; // Agregar la cantidad del producto
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
+    return cart[productId];
 }
 
 // Restar del carrito
@@ -43,14 +44,26 @@ export const subtractFromCart = (productId) => {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
+    return cart[productId] || 0;
 }
 
 // Eliminar del carrito
-const removeFromCart = (productId) => {
+export const removeFromCart = (productId) => {
     let cart = JSON.parse(localStorage.getItem('cart')) || {};
     delete cart[productId]; // Eliminar el producto
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
+}
+
+// getQuantityInCart
+export const getQuantityInCart = (productId) => {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    return cart[productId] || 0;
+}
+
+// getCart
+export const getCart = () => {
+    return JSON.parse(localStorage.getItem('cart')) || {};
 }
 
 // Limpiar carrito
@@ -84,11 +97,11 @@ const renderCart = () => {
                 <p>${product.name}</p>
                 <p>$ ${product.price}</p>
                 <div class="quantity">
-                    <button class="subtract-item" data-id="${product.id}">-</button>
+                    <button class="subtract-item btn" data-id="${product.id}">-</button>
                     <span>${cart[productId]}</span>
-                    <button class="add-item" data-id="${product.id}">+</button>
+                    <button class="add-item btn" data-id="${product.id}">+</button>
                 </div>
-                <button class="remove-item" data-id="${product.id}">X</button>
+                <button class="remove-item btn" data-id="${product.id}">X</button>
             `;
             cartContainer.appendChild(itemDiv);
         } else {

@@ -16,43 +16,14 @@
     --herobtnradiushover:25px;
     --herobtnfontcolorhover:rgb(12, 12, 12);
 
-    /* btn 2 */
-    --btn2maxwhith: 200px;
-    --btn2maxheigh: 50px;
-    --btn2backgroundcolor: rgba(43, 43, 43, 0.459);
-    --btn2bordercolor: rgba(94, 8, 8, 0);
-    --btn2radius: 25px;
-    --btn2font: 'Helvetica', sans-serif;
-    --btn2fontcolor: white;
-    --btn2Hover: rgba(22, 153, 18, 0.734);
-    --btn2radiushover: 25px;
-    --btn2fontcolorhover: rgb(7, 7, 7);
-    --btn2bordercolorhover: rgba(255, 255, 255, 0);
-
-    /* btn 3 */
-    --btn3maxwhith: 180px;
-    --btn3maxheigh: 40px;
-    --btn3backgroundcolor: yellow;
-    --btn3bordercolor: purple;
-    --btn3radius: 30px;
-    --btn3font: 'Georgia', serif;
-    --btn3fontcolor: black;
-    --btn3Hover: rgba(255, 255, 0, 0.734);
-    --btn3radiushover: 10px;
-    --btn3fontcolorhover: green;
-    --btn3bordercolorhover: violet;
-
-    /* btn Accion */
-    --btnAccionmaxwhith: 200px;
-    --btnAccionmaxheigh: 50px;
-    --btnAccionbackgroundcolor: #050364;
-    --btnAccionbordercolor: #cc330000;
-    --btnAccionradius: 10px;
-    --btnAccionfont: 'Arial', sans-serif;
-    --btnAccionfontcolor: white;
-    --btnAccionHover: #0044ff;
-    --btnAccionradiushover: 8px;
-    --btnAccionfontcolorhover: rgb(0, 0, 0);
+    /* btn standar */
+    --btnWhith:50px;
+    --btnHeight:50px;
+    --btnBorderRadius:5px;
+    --btnbackgroundcolor: rgba(78, 78, 78, 0.521);
+    --btnbackgroundcolorhover: rgb(245, 20, 20);
+    --btnbordercolor:rgba(255, 0, 0, 0);
+    --btnbordercolorhover:rgba(255, 0, 0, 0);
 }
 
 
@@ -89,18 +60,18 @@
 .btnhero { max-width: var(--herobtnmaxwhith); max-height: var(--herobtnmaxheigh); background-color: var(--herobtnbackgroundcolor); border: 2px solid var(--herobtnbordercolor); border-radius: var(--herobtnradius); font-family: var(--herobtnfont); color: var(--herobtnfontcolor); display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; padding: 5px; }
 .btnhero:hover { background-color: var(--herobtnHover); border-radius: var(--herobtnradiushover); color: var(--herobtnfontcolorhover); }
 
-/* btn 2 */
-.btn2 { max-width: var(--btn2maxwhith); max-height: var(--btn2maxheigh); background-color: var(--btn2backgroundcolor); border: 1px solid var(--btn2bordercolor); border-radius: var(--btn2radius); font-family: var(--btn2font); color: var(--btn2fontcolor); display: flex; flex-direction: row; align-items: center; justify-content: center;padding: 5px; } 
-.btn2:hover { background-color: var(--btn2Hover); border-radius: var(--btn2radiushover); color: var(--btn2fontcolorhover); border-color: var(--btn2bordercolorhover); }
+.btn{
+    min-width:var(--btnWhith);
+    min-height: var(--btnHeight);
+    background-color: var(--btnbackgroundcolor);
+    border: 2px solid var(--btnbordercolor);
+    border-radius: var(--btnBorderRadius);
+}
 
-/* btn 3 */
-.btn3 { max-width: var(--btn3maxwhith); max-height: var(--btn3maxheigh); background-color: var(--btn3backgroundcolor); border: 1px solid var(--btn3bordercolor); border-radius: var(--btn3radius); font-family: var(--btn3font); color: var(--btn3fontcolor); display: flex; flex-direction: row; align-items: center; justify-content: center; } 
-.btn3:hover { background-color: var(--btn3Hover); border-radius: var(--btn3radiushover); color: var(--btn3fontcolorhover); border-color: var(--btn3bordercolorhover); }
-
-/* btn Accion */
-.btnAccion { max-width: var(--btnAccionmaxwhith); max-height: var(--btnAccionmaxheigh); background-color: var(--btnAccionbackgroundcolor); border: 1px solid var(--btnAccionbordercolor); border-radius: var(--btnAccionradius); font-family: var(--btnAccionfont); color: var(--btnAccionfontcolor); display: flex; flex-direction: row; align-items: center; justify-content: center;padding: 5px;} 
-.btnAccion:hover { background-color: var(--btnAccionHover); border-radius: var(--btnAccionradiushover); color: var(--btnAccionfontcolorhover); }
-
+.btn:hover{
+    background-color: var(--btnbackgroundcolorhover);
+    border: 2px solid var(--btnbordercolorhover);
+}
 
 /* body */
 

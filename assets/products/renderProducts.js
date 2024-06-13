@@ -1,5 +1,5 @@
 import { products } from "./productsList.js";
-import { addToCart } from "../cart/cart.js";
+import { addToCart, subtractFromCart } from "../cart/cart.js";
 
 const renderProductsAndFilters = () => {
     renderProducts();
@@ -27,9 +27,10 @@ const renderProducts = () => {
                     <p>${product.description}</p>
                     <p>💲​${product.price}</p>
                     <div class="cartBtnContainer">
-                        <button class="cartBtnAgregar" data-id="${product.id}" data-quantity="1">1</button>
-                        <button class="cartBtnAdd" data-id="${product.id}">+</button>
-                        <button class="cartBtnSubtract" data-id="${product.id}">-</button>
+                        <button class="cartBtnAdd btn" data-id="${product.id}">+</button>
+                        <span class="quantity" data-id="${product.id}">0</span>
+                        <button class="cartBtnSubtract btn" data-id="${product.id}">-</button>
+                        <button class="btnApplyCart btn" data-id="${product.id}">Aplicar</button>
                     </div>
                     <a class="productBtn" href="./details.html?id=${product.id}">ver !</a>
                 </div>
@@ -49,27 +50,32 @@ const renderProducts = () => {
 
             // Añadir evento a los botones de "Agregar al carrito"
             const cartBtnContainer = productElement.querySelector('.cartBtnContainer');
-            const cartBtnAdd = productElement.querySelector('.cartBtnAdd');
-            const cartBtnSubtract = productElement.querySelector('.cartBtnSubtract');
-            const cartBtnAgregar = productElement.querySelector('.cartBtnAgregar');
+            const cartBtnAdd = productElement.querySelector(`.cartBtnAdd[data-id="${product.id}"]`);
+            const cartBtnSubtract = productElement.querySelector(`.cartBtnSubtract[data-id="${product.id}"]`);
+            const btnApplyCart = productElement.querySelector(`.btnApplyCart[data-id="${product.id}"]`);
+            const quantity = productElement.querySelector(`.quantity[data-id="${product.id}"]`);
 
-            cartBtnAgregar.addEventListener('click', (e) => {
+            btnApplyCart.addEventListener('click', (e) => {
                 const productId = parseInt(e.target.getAttribute('data-id'), 10);
-                const productQuantity = parseInt(e.target.getAttribute('data-quantity'), 10);
-                addToCart(productId, productQuantity);
+                const productQuantity = parseInt(quantity.textContent, 10);
+                if (productQuantity > 0) {
+                    addToCart(productId, productQuantity);
+                }
             });
 
-            cartBtnAdd.addEventListener('click', (e) => {
-                const productId = parseInt(e.target.getAttribute('data-id'), 10);
-                const productQuantity = cartBtnContainer.querySelector(`.cartBtnAgregar[data-id="${productId}"]`);
-                productQuantity.textContent = parseInt(productQuantity.textContent, 10) + 1;
+            document.querySelectorAll('.subtract-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'), 10);
+                    subtractFromCart(productId);
+                });
             });
 
             cartBtnSubtract.addEventListener('click', (e) => {
                 const productId = parseInt(e.target.getAttribute('data-id'), 10);
-                const productQuantity = cartBtnContainer.querySelector(`.cartBtnAgregar[data-id="${productId}"]`);
-                if (parseInt(productQuantity.textContent, 10) > 1) {
-                    productQuantity.textContent = parseInt(productQuantity.textContent, 10) - 1;
+                const productQuantity = parseInt(quantity.textContent, 10) - 1;
+                if (productQuantity >= 0) {
+                    quantity.textContent = productQuantity;
+                    addToCart(productId, productQuantity);
                 }
             });
         });
